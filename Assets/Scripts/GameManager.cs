@@ -15,8 +15,6 @@ public class GameManager : MonoBehaviour
     public Slime[] slimes;
     public Slime target;
 
-    public int actions;
-
     public Item[] items;
     public List<Transform> placesItems;
 
