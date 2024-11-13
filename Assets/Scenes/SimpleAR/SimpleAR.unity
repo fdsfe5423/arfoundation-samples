@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -272,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89aa529c93736ab4db6dd582f742f591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PrefabToPlace: {fileID: 1934569588295450, guid: b34b6c8f1206a6844b983e23b9da0441,
+  m_PrefabToPlace: {fileID: 2594605363636067334, guid: c0668cb2ba9134be98f4f004cd24a2c2,
     type: 3}
   m_RaycastHitEvent: {fileID: 11400000, guid: 6ddaf6abbb6e3f6489a5badc62d646ef, type: 2}
 --- !u!114 &611792961
@@ -1258,6 +1257,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas Template
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345495004138282345, guid: b8f7382051281456a93ced9c504c48c4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5740495543103849742, guid: b8f7382051281456a93ced9c504c48c4,
         type: 3}
