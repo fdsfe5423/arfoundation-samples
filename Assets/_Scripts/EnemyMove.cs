@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemyMove : MonoBehaviour
 {
     public int iWalk;
-    public GameObject[] agy;
+    public GameObject[] agy;    
 
     public void Walk()
     {
