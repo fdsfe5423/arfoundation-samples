@@ -1,20 +1,39 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public GameObject move;
-    public int da;
+    public GameObject player;
+    public float walk;
+    public float time;
+    public float time2;
+    public float da;
+    public float daMinus;
+
+    private void Start()
+    {
+    }
+
+    private void Update()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     public void Forw()
     {
-        move.transform.localPosition = new Vector3(0,0,da);
+        if(walk >0)
+        {
+            StartCoroutine(Walk());
+        } 
     }
-    public void Back()
+    public IEnumerator Walk()
     {
-        move.transform.localPosition = new Vector3(0, 0, -da);
-    }
-    public void Right()
-    {
-        move.transform.localRotation = new Quaternion(0,90,0,0);
+        while(time2 > 0)
+        {
+            da += walk;
+            player.transform.localPosition += new Vector3(daMinus, 0, da);
+            time2 -= 1;
+            yield return new WaitForSeconds(time);
+        }       
     }
 }
