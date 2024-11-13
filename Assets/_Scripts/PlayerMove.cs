@@ -23,17 +23,81 @@ public class PlayerMove : MonoBehaviour
     {
         if(walk >0)
         {
-            StartCoroutine(Walk());
+            time2 = 10;
+            StartCoroutine(WalkForw());
         } 
     }
-    public IEnumerator Walk()
+    public void Back()
+    {
+        if (walk > 0)
+        {
+            time2 = 10;
+            StartCoroutine(WalkBack());
+        }
+    }
+    public void Rigth()
+    {
+        if (walk > 0)
+        {
+            time2 = 10;
+            StartCoroutine(WalkRigth());
+        }
+    }
+    public void Left()
+    {
+        if (walk > 0)
+        {
+            time2 = 10;
+            StartCoroutine(WalkLeft());
+        }
+    }
+    public IEnumerator WalkForw()
     {
         while(time2 > 0)
         {
-            da += walk;
-            player.transform.localPosition += new Vector3(daMinus, 0, da);
+            if(time2 > 0)
+            {
+            player.transform.localPosition += new Vector3(0, 0, da);
             time2 -= 1;
             yield return new WaitForSeconds(time);
-        }       
+            }
+        }
+    }
+    public IEnumerator WalkBack()
+    {
+        while (time2 > 0)
+        {
+            if (time2 > 0)
+            {
+                player.transform.localPosition += new Vector3(0, 0, -da);
+                time2 -= 1;
+                yield return new WaitForSeconds(time);
+            }
+        }
+
+    }
+    public IEnumerator WalkRigth()
+    {
+        while (time2 > 0)
+        {
+            if (time2 > 0)
+            {
+                player.transform.localPosition += new Vector3(-daMinus, 0, 0);
+                time2 -= 1;
+                yield return new WaitForSeconds(time);
+            }
+        }
+    }
+    public IEnumerator WalkLeft()
+    {
+        while (time2 > 0)
+        {
+            if (time2 > 0)
+            {
+                player.transform.localPosition += new Vector3(daMinus, 0, 0);
+                time2 -= 1;
+                yield return new WaitForSeconds(time);
+            }
+        }
     }
 }
