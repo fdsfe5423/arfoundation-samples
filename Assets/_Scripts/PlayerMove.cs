@@ -9,13 +9,11 @@ public class PlayerMove : MonoBehaviour
     public float time2;
     public float da;
     public float daMinus;
-
-    private void Start()
-    {
-    }
+    public float newRotation;
+    public float speedRot;  
 
     private void Update()
-    {
+    { 
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -62,6 +60,7 @@ public class PlayerMove : MonoBehaviour
             yield return new WaitForSeconds(time);
             }
         }
+        walk--;
     }
     public IEnumerator WalkBack()
     {
@@ -74,7 +73,7 @@ public class PlayerMove : MonoBehaviour
                 yield return new WaitForSeconds(time);
             }
         }
-
+        walk--;
     }
     public IEnumerator WalkRigth()
     {
@@ -87,6 +86,7 @@ public class PlayerMove : MonoBehaviour
                 yield return new WaitForSeconds(time);
             }
         }
+        walk--;
     }
     public IEnumerator WalkLeft()
     {
@@ -99,5 +99,6 @@ public class PlayerMove : MonoBehaviour
                 yield return new WaitForSeconds(time);
             }
         }
+        walk--;
     }
 }
