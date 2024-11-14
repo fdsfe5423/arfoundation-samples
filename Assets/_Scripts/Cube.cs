@@ -7,6 +7,7 @@ public class Cube : MonoBehaviour
     public int countWalk;
     public int random;
     public Animator animator;
+    public AudioSource audio;
 
     private void Update()
     {
@@ -75,7 +76,7 @@ public class Cube : MonoBehaviour
 
     public void DropCube()
     {
-        if(player.GetComponent<PlayerMove>().walk > 0)
+        if(player.GetComponent<New_Player>().walk > 0)
         {
             return;
         }
@@ -84,8 +85,9 @@ public class Cube : MonoBehaviour
         {
             StartCoroutine(IPublic());
         }
+        audio.Play();
         countWalk = random;
-        player.GetComponent<PlayerMove>().walk = countWalk;
+        player.GetComponent<New_Player>().walk = countWalk;
     }
     public void StopAnim()
     {
@@ -103,6 +105,7 @@ public class Cube : MonoBehaviour
             random = Random.Range(1, 6);
             yield return new WaitForSeconds(0);
         }
+        audio.Play();
         countWalk = random;
     }
 }

@@ -103,7 +103,7 @@ public class New_Enemy : MonoBehaviour
             walk++;
             ensc.NewWalk();
         }
-        else if (walk < 51)
+        else if (walk < 52)
         {
             Left();
             walk++;
