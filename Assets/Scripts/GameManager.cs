@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     {
         slimes = FindObjectsOfType<Slime>();
         target = slimes[Random.Range(0, slimes.Length)];
+        trueItems = target.items;
 
         items = FindObjectsOfType<Item>();
         foreach (Item item in items)
