@@ -32,6 +32,10 @@ public class New_Player : MonoBehaviour
             ensc.func1();
             
         }
+        if (walk > 0)
+        {
+            enemy = false;
+        }
     }
     public void Forw()
     {
@@ -72,8 +76,8 @@ public class New_Player : MonoBehaviour
     }
     public void NewWalk()
     {
-        walk = Random.Range(1, 6);
-        enemy = false;  
+        //walk = Random.Range(1, 6);
+        //enemy = false;  
     }
     public IEnumerator WalkForw()
     {

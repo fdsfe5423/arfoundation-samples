@@ -75,7 +75,7 @@ public class Cube : MonoBehaviour
 
     public void DropCube()
     {
-        if(player.GetComponent<PlayerMove>().walk > 0)
+        if(player.GetComponent<New_Player>().walk > 0)
         {
             return;
         }
@@ -85,7 +85,7 @@ public class Cube : MonoBehaviour
             StartCoroutine(IPublic());
         }
         countWalk = random;
-        player.GetComponent<PlayerMove>().walk = countWalk;
+        player.GetComponent<New_Player>().walk = countWalk;
     }
     public void StopAnim()
     {
