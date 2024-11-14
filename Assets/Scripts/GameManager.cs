@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
@@ -39,5 +40,10 @@ public class GameManager : MonoBehaviour
             item.gameObject.transform.position = placesItems[a].position;
             placesItems.RemoveAt(a);
         }
+    }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene("GameOver");
     }
 }

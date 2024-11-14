@@ -10,11 +10,13 @@ public class New_Enemy : MonoBehaviour
     public float da;
     public New_Player ensc;
     public GameObject player;
+    private GameManager gm;
 
     private void Start()
     {
-        
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
+
     private void Update()
     {
         player = GameObject.FindGameObjectWithTag("Player_control");
@@ -108,6 +110,10 @@ public class New_Enemy : MonoBehaviour
             Left();
             walk++;
             ensc.NewWalk();
+        }
+        else
+        {
+
         }
 
     }

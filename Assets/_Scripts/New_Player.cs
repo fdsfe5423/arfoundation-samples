@@ -21,6 +21,10 @@ public class New_Player : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         target = GameObject.FindGameObjectWithTag("target");
+        if (ensc == null)
+        {
+            ensc = target.GetComponent<New_Enemy>();
+        }
         Enemy();
     }
     private void Enemy()
@@ -29,8 +33,7 @@ public class New_Player : MonoBehaviour
         {
             walk = 0;
             enemy = true;
-            ensc.func1();
-            
+            StartCoroutine(EnemyWalk());
         }
         if (walk > 0)
         {
@@ -126,6 +129,16 @@ public class New_Player : MonoBehaviour
                 time2 -= 1;
                 yield return new WaitForSeconds(time);
             }
+        }
+    }
+    public IEnumerator EnemyWalk()
+    {
+        int walkingg = 0;
+        while (walkingg < 3)
+        {
+            ensc.func1();
+            walkingg++;
+            yield return new WaitForSeconds(1);
         }
     }
 }
