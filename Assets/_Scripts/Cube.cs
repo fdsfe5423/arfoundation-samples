@@ -76,18 +76,7 @@ public class Cube : MonoBehaviour
 
     public void DropCube()
     {
-        if(player.GetComponent<New_Player>().walk > 0)
-        {
-            return;
-        }
-        random = Random.Range(1, 6);
-        if(countWalk == random)
-        {
             StartCoroutine(IPublic());
-        }
-        audio.Play();
-        countWalk = random;
-        player.GetComponent<New_Player>().walk = countWalk;
     }
     public void StopAnim()
     {
@@ -107,5 +96,6 @@ public class Cube : MonoBehaviour
         }
         audio.Play();
         countWalk = random;
+        player.GetComponent<New_Player>().walk = countWalk;
     }
 }

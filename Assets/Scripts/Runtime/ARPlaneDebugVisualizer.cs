@@ -42,7 +42,7 @@ namespace UnityEngine.XR.ARFoundation
         float m_FontSize = 0.25f;
         
         [SerializeField, Tooltip("The mesh color used for planes in the Tracking state")]
-        Color trackingColor = new Color(253, 184, 19, 84);
+        Color trackingColor = new Color(0, 0, 0, 63);
 
         [SerializeField, Tooltip("The mesh color used for planes in the Limited state")]
         Color limitedColor = new Color(75, 75, 75, 84);
