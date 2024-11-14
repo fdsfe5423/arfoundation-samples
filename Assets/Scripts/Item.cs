@@ -27,8 +27,9 @@ public class Item : MonoBehaviour
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
-    private void OnMouseDown()
+    private void OnCollisionEnter(Collision collision)
     {
+
         Identify();
     }
 }
