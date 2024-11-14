@@ -7,6 +7,7 @@ public class Cube : MonoBehaviour
     public int countWalk;
     public int random;
     public Animator animator;
+    public AudioSource audio;
 
     private void Update()
     {
@@ -84,6 +85,7 @@ public class Cube : MonoBehaviour
         {
             StartCoroutine(IPublic());
         }
+        audio.Play();
         countWalk = random;
         player.GetComponent<New_Player>().walk = countWalk;
     }
@@ -103,6 +105,7 @@ public class Cube : MonoBehaviour
             random = Random.Range(1, 6);
             yield return new WaitForSeconds(0);
         }
+        audio.Play();
         countWalk = random;
     }
 }
