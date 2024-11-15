@@ -6,8 +6,10 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     private GameManager gm;
+    private GameObject deshefrator;
 
     public GameManager.ItemTypes itemType;
+    private bool isTrueItem;
 
     public void Identify()
     {
@@ -27,18 +29,21 @@ public class Item : MonoBehaviour
     private void Start()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+
     }
 
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            Identify();
+            StartCoroutine(Anim());
         }
     }
 
     IEnumerator Anim()
     {
-        yield return new WaitForSeconds(1f);
+        GetComponent<MeshCollider>().enabled = false;
+        yield return new WaitForSeconds(10f);
+        Identify();
     }
 }
