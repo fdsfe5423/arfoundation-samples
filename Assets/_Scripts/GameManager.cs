@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public Item[] items;
     public List<Transform> placesItems;
 
-    private void Start()
+    private void Awake()
     {
         slimes = FindObjectsOfType<Slime>();
         target = slimes[Random.Range(0, slimes.Length)];
