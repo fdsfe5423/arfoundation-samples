@@ -113,7 +113,7 @@ public class New_Enemy : MonoBehaviour
         }
         else
         {
-
+            gm.GameOver();
         }
 
     }

@@ -46,4 +46,8 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("GameOver");
     }
+    public void Win()
+    {
+        SceneManager.LoadScene("Win");
+    }
 }

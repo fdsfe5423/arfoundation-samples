@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Item : MonoBehaviour
@@ -18,7 +19,6 @@ public class Item : MonoBehaviour
                 {
                     slime.isSuspect = false;
                     slime.gameObject.SetActive(false);
-                    GetComponent<MeshRenderer>().enabled = false;
                 }
             }
         }
@@ -35,5 +35,10 @@ public class Item : MonoBehaviour
         {
             Identify();
         }
+    }
+
+    IEnumerator Anim()
+    {
+        yield return new WaitForSeconds(1f);
     }
 }
