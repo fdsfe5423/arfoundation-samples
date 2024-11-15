@@ -11,6 +11,7 @@ public class New_Player : MonoBehaviour
     public GameObject target;
     public bool enemy = false;
     public Animator anim;
+    public AudioSource audio;
 
     public New_Enemy ensc;
     private void Start()
@@ -51,6 +52,7 @@ public class New_Player : MonoBehaviour
 
             StartCoroutine(WalkForw());
             anim.SetBool("IsJump", true);
+            audio.Play();
         }
     }
     public void Back()
@@ -61,6 +63,7 @@ public class New_Player : MonoBehaviour
             walk -= 1;
             StartCoroutine(WalkBack());
             anim.SetBool("IsJump", true);
+            audio.Play();
         }
     }
     public void Rigth()
@@ -71,6 +74,7 @@ public class New_Player : MonoBehaviour
             walk -= 1;
             StartCoroutine(WalkRigth());
             anim.SetBool("IsJump", true);
+            audio.Play();
         }
     }
     public void Left()
@@ -81,6 +85,7 @@ public class New_Player : MonoBehaviour
             walk -= 1;
             StartCoroutine(WalkLeft());
             anim.SetBool("IsJump", true);
+            audio.Play();
         }
     }
     public void NewWalk()
