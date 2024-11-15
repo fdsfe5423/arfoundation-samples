@@ -10,17 +10,20 @@ public class New_Player : MonoBehaviour
     public float da;
     public GameObject target;
     public bool enemy = false;
+    public Animator anim;
+    public AudioSource audio;
 
     public New_Enemy ensc;
     private void Start()
     {
-        ensc = target.GetComponent<New_Enemy>();
     }
 
     private void Update()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        anim = player.GetComponent<Animator>();
         target = GameObject.FindGameObjectWithTag("target");
+        ensc = target.GetComponent<New_Enemy>();
         if (ensc == null)
         {
             ensc = target.GetComponent<New_Enemy>();
@@ -48,6 +51,8 @@ public class New_Player : MonoBehaviour
             walk -= 1;
 
             StartCoroutine(WalkForw());
+            anim.SetBool("IsJump", true);
+            audio.Play();
         }
     }
     public void Back()
@@ -57,6 +62,8 @@ public class New_Player : MonoBehaviour
             time2 = 10;
             walk -= 1;
             StartCoroutine(WalkBack());
+            anim.SetBool("IsJump", true);
+            audio.Play();
         }
     }
     public void Rigth()
@@ -66,6 +73,8 @@ public class New_Player : MonoBehaviour
             time2 = 10;
             walk -= 1;
             StartCoroutine(WalkRigth());
+            anim.SetBool("IsJump", true);
+            audio.Play();
         }
     }
     public void Left()
@@ -75,6 +84,8 @@ public class New_Player : MonoBehaviour
             time2 = 10;
             walk -= 1;
             StartCoroutine(WalkLeft());
+            anim.SetBool("IsJump", true);
+            audio.Play();
         }
     }
     public void NewWalk()
@@ -93,6 +104,7 @@ public class New_Player : MonoBehaviour
                 yield return new WaitForSeconds(time);
             }
         }
+        anim.SetBool("IsJump", false);
     }
     public IEnumerator WalkBack()
     {
@@ -105,7 +117,7 @@ public class New_Player : MonoBehaviour
                 yield return new WaitForSeconds(time);
             }
         }
-
+        anim.SetBool("IsJump", false);
     }
     public IEnumerator WalkRigth()
     {
@@ -118,6 +130,7 @@ public class New_Player : MonoBehaviour
                 yield return new WaitForSeconds(time);
             }
         }
+        anim.SetBool("IsJump", false);
     }
     public IEnumerator WalkLeft()
     {
@@ -130,5 +143,6 @@ public class New_Player : MonoBehaviour
                 yield return new WaitForSeconds(time);
             }
         }
+        anim.SetBool("IsJump", false);
     }
 }    
