@@ -29,11 +29,11 @@ public class New_Player : MonoBehaviour
     }
     private void Enemy()
     {
-        if (walk == 0&&!enemy)
+        if (walk == 0 && !enemy)
         {
             walk = 0;
             enemy = true;
-            StartCoroutine(EnemyWalk());
+            ensc.func1();
         }
         if (walk > 0)
         {
@@ -131,14 +131,4 @@ public class New_Player : MonoBehaviour
             }
         }
     }
-    public IEnumerator EnemyWalk()
-    {
-        int walkingg = 0;
-        while (walkingg < 3)
-        {
-            ensc.func1();
-            walkingg++;
-            yield return new WaitForSeconds(1);
-        }
-    }
-}
+}    
