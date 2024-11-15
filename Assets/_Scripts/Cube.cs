@@ -76,22 +76,16 @@ public class Cube : MonoBehaviour
 
     public void DropCube()
     {
+        if (player.GetComponent<New_Player>().walk <= 0)
+        {
             StartCoroutine(IPublic());
-    }
-    public void StopAnim()
-    {
-        animator.SetBool("1", false);
-        animator.SetBool("2", false);
-        animator.SetBool("3", false);
-        animator.SetBool("4", false);
-        animator.SetBool("5", false);
-        animator.SetBool("6", false);
+        }
     }
     public IEnumerator IPublic()
     {
         while(countWalk == random)
         {
-            random = Random.Range(1, 6);
+            random = Random.Range(1, 7);
             yield return new WaitForSeconds(0);
         }
         audio.Play();
